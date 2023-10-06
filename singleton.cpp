@@ -7,10 +7,10 @@ private:
 	Singleton(const Singleton& other);
 public:
 	static Singleton* getInstance()
-    {
+        {
 	    static Singleton instance;
 	    return &instance;
-    }
+        }
 	static Singleton* m_instance;
  };
 
