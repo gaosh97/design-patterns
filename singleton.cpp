@@ -1,4 +1,4 @@
-//±£Ö¤Ò»¸öÀà½öÓĞÒ»¸öÊµÀı£¬²¢Ìá¹©Ò»¸ö·ÃÎÊËüµÄÈ«¾Ö·ÃÎÊµã£¬¸ÃÊµÀı±»ËùÓĞ³ÌĞòÄ£¿é¹²Ïí
+//ä¿è¯ä¸€ä¸ªç±»ä»…æœ‰ä¸€ä¸ªå®ä¾‹ï¼Œå¹¶æä¾›ä¸€ä¸ªè®¿é—®å®ƒçš„å…¨å±€è®¿é—®ç‚¹ï¼Œè¯¥å®ä¾‹è¢«æ‰€æœ‰ç¨‹åºæ¨¡å—å…±äº«
 #include<iostream>
 class Singleton
 {
@@ -6,13 +6,17 @@ private:
 	Singleton();
 	Singleton(const Singleton& other);
 public:
-	static Singleton* getInstance();
+	static Singleton* getInstance()
+    {
+	    static Singleton instance;
+	    return &instance;
+    }
 	static Singleton* m_instance;
  };
 
 Singleton* Singleton::m_instance = nullptr;
 
-//Ïß³Ì·Ç°²È«
+//çº¿ç¨‹éå®‰å…¨
 //Singleton* Singleton::getInstance()
 //{
 //	if (m_instance == nullptr)
@@ -22,9 +26,3 @@ Singleton* Singleton::m_instance = nullptr;
 //	return m_instance;
 //}
 
-
-Singleton* Singleton::getInstance()
-{
-	static Singleton instance;
-	return &instance;
-}
